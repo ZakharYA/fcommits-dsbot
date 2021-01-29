@@ -1,0 +1,12 @@
+version: '3'
+
+services:
+   fcommits-dsbot:
+      container_name: fcommits-dsbot
+      restart: always
+      image: fcommits-dsbot
+      build:
+         context: .
+         dockerfile: Dockerfile
+      environment:
+         NODE_ENV: production

@@ -1,0 +1,24 @@
+{
+    "env": {
+        "commonjs": true,
+        "es2021": true,
+        "node": true
+    },
+    "extends": "eslint:recommended",
+    "parserOptions": {
+        "ecmaVersion": 12
+    },
+    "rules": {
+		 "lines-between-class-members": 1,
+		 "no-var": 1,
+		 "yoda": 1,
+		 "comma-dangle": 1,
+		 "no-inner-declarations": 1,
+		 "no-dupe-class-members": 1,
+		 "no-unused-vars": 1,
+		 "no-use-before-define": 1,
+		 "arrow-parens": 1,
+		 "no-trailing-spaces": 1,
+		 "semi": 1
+    }
+}

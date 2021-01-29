@@ -1,0 +1,19 @@
+{
+  "name": "fcommits-dsbot",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "eslint": "^7.8.1"
+  },
+  "dependencies": {
+    "@sentry/node": "^5.23.0",
+    "discord.js": "^12.4.1",
+    "facepunch-commits": "^2.1.11"
+  }
+}
