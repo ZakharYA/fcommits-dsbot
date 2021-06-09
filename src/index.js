@@ -23,7 +23,7 @@ const sendInChat = async(chatId, commit) => {
 
 	const embed = new MessageEmbed()
 		.setTimestamp()
-		.setColor(1740997)
+		.setColor('RANDOM')
 		.setTitle(`Commit#${commit.changeset}`)
 		.setURL(`https://commits.facepunch.com/${commit.id}`)
 		.setAuthor(commit.user.name, commit.user.avatar, `https://commits.facepunch.com/${userNameMinimized}`)
