@@ -36,6 +36,7 @@ const sendInChat = async(chatId, commit) => {
 };
 
 const channelsSubscribe = config.channels;
+const sboxChannel = '760145201653088266';
 
 Object.keys(channelsSubscribe).map((channelId) => {
 	channelsSubscribe[channelId].map((channelName) => {
@@ -46,6 +47,10 @@ Object.keys(channelsSubscribe).map((channelId) => {
 });
 
 facepunchAPI.subscribeToAll(async(commit) => {
+	if (commit.repo.match(/sbox|sandbox/g)) {
+		return sendInChat(sboxChannel, commit);
+	}
+
 	await sendInChat(config.channelId, commit);
 });
 
