@@ -24,11 +24,9 @@ const sendInChat = async(chatId, commit) => {
 	const embed = new MessageEmbed()
 		.setTimestamp()
 		.setColor('RANDOM')
-		.setTitle(`Commit#${commit.changeset}`)
+		.setDescription(`\`\`\`${commit.message}\`\`\``)
 		.setURL(`https://commits.facepunch.com/${commit.id}`)
 		.setAuthor(commit.user.name, commit.user.avatar, `https://commits.facepunch.com/${userNameMinimized}`)
-		.addField('Message', '```' + (commit.isHide() ? 'Hide commit' : commit.message) + '```')
-		.addField('Repository', `${commit.repo}/${commit.branch}`)
 		.setFooter(`https://commits.facepunch.com/r/${repNameMinimized}/${commit.branch}`);
 
 	const resultMessage = await channel.send(embed);
