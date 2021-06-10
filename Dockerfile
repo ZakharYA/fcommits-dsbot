@@ -12,6 +12,6 @@ USER node
 RUN npm ci
 
 COPY --chown=node:node . ./
-RUN tsc
+RUN npx tsc
 
 CMD ["node", "dist/index"]
