@@ -1,12 +1,16 @@
 version: '3'
 
 services:
-   fcommits-dsbot:
-      container_name: fcommits-dsbot
-      restart: always
-      image: fcommits-dsbot
-      build:
-         context: .
-         dockerfile: Dockerfile
-      environment:
-         NODE_ENV: production
+    fcommits-bot:
+        container_name: fcommits-bot
+        restart: always
+        build:
+            context: .
+            dockerfile: Dockerfile
+        environment:
+            NODE_ENV: production
+        volumes:
+            - npm_cache_fcommits_bot:/home/node/app/node_modules
+
+volumes:
+    npm_cache_fcommits_bot: {}

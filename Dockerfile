@@ -4,10 +4,14 @@ RUN mkdir /home/node/app/ && chown -R node:node /home/node/app
 
 WORKDIR /home/node/app
 
-COPY --chown=node:node . ./
+COPY ./package.json ./
+COPY ./package-lock.json ./
 
 USER node
 
-RUN npm install && npm cache clean --force --loglevel=error
+RUN npm ci
 
-CMD ["npm", "start"]
+COPY --chown=node:node . ./
+RUN tsc
+
+CMD ["node", "dist/index"]
